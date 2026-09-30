@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NoteIQ AI — PDF Study Assistant</title><link rel="stylesheet" href="style.css">
+</head><body>
+<header><div class="brand"><span class="logo">N</span> NoteIQ <b>AI</b></div>
+<nav><a href="#home">Home</a><a href="#workspace">Workspace</a><a href="#features">Features</a></nav>
+<button onclick="go()">Try NoteIQ</button></header>
+
+<section id="home" class="hero"><div>
+<span class="pill">✨ AI-powered PDF study assistant</span>
+<h1>Turn your PDFs into <span>smart notes.</span></h1>
+<p>Upload study material, ask questions, generate summaries and create exam-ready notes with NoteIQ AI.</p>
+<button class="primary" onclick="go()">Upload PDF →</button>
+</div><div class="card preview"><b>NoteIQ Workspace</b>
+<div class="mock">📄 <b>Study Material.pdf</b><small>Ready to ask questions</small></div>
+<div class="q">What are the important topics?</div><div class="a">Get clear, concise and exam-ready answers from your study material.</div>
+</div></section>
+
+<section id="features" class="features">
+<div>📄<h3>PDF Reader</h3><p>Upload your learning material.</p></div>
+<div>🤖<h3>Ask AI</h3><p>Ask questions naturally.</p></div>
+<div>📝<h3>Smart Notes</h3><p>Create concise revision notes.</p></div>
+<div>🎯<h3>Exam Mode</h3><p>Prepare important questions.</p></div>
+</section>
+
+<section id="workspace"><div class="heading"><div><small>YOUR WORKSPACE</small><h2>Study smarter with NoteIQ</h2></div><span id="status">No PDF uploaded</span></div>
+<div id="drop" class="upload"><div class="big">☁️</div><h3>Upload your PDF</h3><p>Choose a PDF from your device.</p>
+<input id="pdf" type="file" accept=".pdf,application/pdf" hidden><button class="primary" onclick="pdf.click()">Choose PDF</button>
+<small>Frontend prototype — connect an AI backend for real PDF answers.</small></div>
+<div class="grid"><div class="panel"><div class="panelhead"><b>🤖 Ask NoteIQ</b><button onclick="clearChat()">Clear</button></div>
+<div id="chat" class="chat"><div class="bubble bot">Hi! Upload a PDF and ask: <b>“What are the important topics?”</b></div></div>
+<div class="quick"><button onclick="ask('Summarize this PDF.')">Summarize</button><button onclick="ask('Give important topics.')">Important topics</button><button onclick="ask('Create 5 exam questions.')">Exam questions</button></div>
+<div class="compose"><input id="question" placeholder="Ask about your PDF..." onkeydown="if(event.key==='Enter')send()"><button class="primary" onclick="send()">Ask</button></div>
+</div>
+<div class="panel"><div class="panelhead"><b>📝 Smart Notes</b><button onclick="notes()">Generate</button></div><div id="notes" class="notes">Upload a PDF, then click Generate.</div></div></div></section>
+<footer>NoteIQ AI — AI-powered PDF learning assistant • Prototype</footer>
+<script src="app.js"></script></body></html>
